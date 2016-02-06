@@ -1,0 +1,23 @@
+<div class="header">
+   <div class="container">
+     <h1>Submit a Matter</h1>
+   </div>
+</div>
+
+<div class="main">
+	<div class="container">
+        
+	   <%= form_for(@new_matter) do |f| %>
+	             <%= f.text_field :content, :placeholder => "Share Your Thoughts" %>
+	     <%= f.submit "Peap It", :class => "button.btn" %>
+	   <% end %>
+
+	   <ul class="contents">
+	     <% @all_matters.each do |p| %>
+	     <li> <%= p.content %> </li>
+	     <% end %>
+	   </ul>
+	
+	</div>
+</div>
+        

@@ -1,0 +1,23 @@
+<div class="header">
+     <h1>Submit a Story</h1>
+</div>
+
+<div class="main">
+	<div class="container">
+        
+	   <%= form_for(@new_post, :html => { :style => 'height: 400px;' }) do |f| %>
+	             <%= f.text_field :story, class: 'storc', :placeholder => "
+				 Share Your Thoughts 
+				 Peep into your life" %>
+	     <%= f.submit "Peap It", :class => "button.btn" %>
+	   <% end %>
+
+	   <ul class="stories">
+	     <% @all_posts.each do |p| %>
+	     <li> <%= p.story %> </li>
+	     <% end %>
+	   </ul>
+	
+	</div>
+</div>
+        
