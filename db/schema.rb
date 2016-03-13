@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121074205) do
+ActiveRecord::Schema.define(version: 20160313011441) do
 
   create_table "issues", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 20160121074205) do
   end
 
   create_table "matters", force: :cascade do |t|
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false

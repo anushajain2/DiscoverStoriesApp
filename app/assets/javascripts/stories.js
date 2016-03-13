@@ -1,4 +1,8 @@
 var main = function() {
+
+	document.getElementById('boxxx').innerHTML = vall();
+	
+	
 	$('.box1').click(function() {
 		$(this).addClass('clicked');
 		var circ = document.getElementById('circ');
@@ -20,7 +24,7 @@ var main = function() {
 	$('.box3').click(function() {
 		$(this).addClass('clicked3');
 	});
-
+    
 
 };
 

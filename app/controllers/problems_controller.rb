@@ -2,6 +2,7 @@ class ProblemsController < ApplicationController
   def index
     @new_problem = Problem.new
     @all_problems = Problem.all
+    @all_matters = Matter.all
   end
   
   def create 

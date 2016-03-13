@@ -25,7 +25,12 @@ var main = function() {
 			left: '0px'
 		}, 2000);
 	});
-	
+};
+
+var vall = function()
+{
+	var v = $('.controls').find(":selected").val();
+	document.getElementById('.boxx').innerHTML = v;
 };
 
 $(document).ready(main);

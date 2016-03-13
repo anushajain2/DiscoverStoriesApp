@@ -1,21 +1,24 @@
 Rails.application.routes.draw do
-  get 'matters/index'
+  get 'messages/index'
 
+  get 'matters/index'
+  get 'messages/index'
   get 'posts/index'
   get 'matters/index'
   get 'stories/index'
-
+  get 'problems/index' 
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'stories#index'
-  root 'stories#index'
-  get 'problems/index' 
+  root 'messages#index'
   
   resources :matters
   resources :posts
   resources :problems
+  resources :messages
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

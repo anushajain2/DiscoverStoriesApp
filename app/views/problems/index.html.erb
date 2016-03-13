@@ -2,7 +2,8 @@
 <html lang=“en”>
 <head>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+<script src="jquery.min.js"></script>
+<script src="jquery.marcopolo.min.js"></script>
 </head> 
 
 <body>
@@ -54,13 +55,20 @@
                 <br>
                 <label for="situation">I </label>
                 <input type="text" id="input2">
-          </form>
+            </form>
+		<div class="boxx" id="boxx"></div>
+		<div class="controls">
+	      <%= collection_select( :matter, :matter_id, Matter.all, :content, :content) %>
+	    </div>
+		
         </div>
-        <button type="button" class="btn-default2" aria-label="Right Chevron">
+		<a href="/stories/index">
+          <button type="button" class="btn-default2" aria-label="Right Chevron">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
             </span>
-        </button>
-		
+          </button>
+	    </a>
 	</div>
 </body>
 </html>
+
