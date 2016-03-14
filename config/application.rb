@@ -24,6 +24,6 @@ module Made
     config.active_record.raise_in_transactional_callbacks = true
     # config.assets.initialize_on_precomile = false
     config.assets.paths << Rails.root.join('vendor', 'assets')
-    config.assets.precompile += ['problems.js', 'problems.css']
+    config.assets.precompile += %w(*.css *.js)
   end
 end
