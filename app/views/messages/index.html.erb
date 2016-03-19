@@ -1,53 +1,85 @@
 <html>
- <head>
- 	<title>Peap</title>
- 	<link href='stylesheets/bootstrap.css' rel='stylesheet'>
- 	<link href='stylesheets/messages.css' rel='stylesheets'>
- </head>
-<body>
-  <div class='container'>
-   <div class='header'>
-   	 <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="/messages/index">Home</a></li>
-            <li role="presentation"><a href="/posts/index">Post</a></li>
-            <li role="presentation"><a href="/stories/index">All Peaps</a></li>
-            <li role="presentation"><a href="/problems">Peap</a></li>
-
-          </ul>
-        </nav>
-   </div> <!--header-->
-
-   <div class="jumbotron">
-      <h1>PEAP</h1>
-      <p> Peace in Pain </p>
-   </div> <!--jumbotron-->
-   
- 
-      <div class="row marketing">
-        <div class="col-md-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Find your Peap</h2>
-          <!--<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p> -->
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-md-4 -->
-        <div class="col-md-4">
-         <!-- <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"> -->
-          <h2>Post a Peap</h2>
-          <h3>Help others find their Peap</h3>
-          <!-- <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p> -->
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-md-4 -->
-        <div class="col-md-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Explore All Peaps</h2>
-          <!-- <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p> -->
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-md-4 -->
-        </div><!-- /.row -->
-    </div> <!--container-->
-
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<head>
+  <title>Peap</title>
+  <link href='stylesheets/bootstrap.css' rel='stylesheet'>
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    <script src="javascripts/bootstrap.min.js"></script>
+  <script>
+     var main = function() {
+        $('.co').animate({cy: '50px'}, 
+          1900, function(){
+            $('.co').css("fill", "yellow");
+            $('.c1').fadeTo("slow", 0.4);
+            $('.c2').fadeTo("slow", 0.2);
+            $('.c3').fadeTo("slow", 0.2);
+            $('.he').fadeIn(2500);
+
+
+        });
+     };
+
+     $(document).ready(main);
+  </script>
+  <style>
+
+    .jumbotron {
+      height: 700px;
+    }
+
+    .circleh {
+    margin-left: 150px;
+    width: 100px;
+    height: 100px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    } 
+     
+    .he {
+       display: none;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="jumbotron">
+    <h1 class="text-center">PEAP</h1>
+    <p class="text-center">Find peace in pain</p>
+    <div class="he text-center">
+       <p>OR Help others find peace in pain</p>
+    </div>
+    <svg width="900" height="500" style="margin-left:150px; margin-top: 50px;">
+      <circle cx="470" cy="200" r="150" fill="#ffff99" class="c1"/>
+      <circle cx="300" cy="240" r="150" fill="#0d7260" class="c2"/>
+      <circle cx="620" cy="250" r="130" class="c3" />
+      <circle cx="50" cy="250" r="50" class="co" id="co" />
+      <path d="M 50 100 L 62 110 68 97 " fill="yellow" />
+      <path d="M 80 90 L 92 100 98 87 " fill="yellow" />
+      <path d="M 110 100 L 62 110 68 97 " fill="yellow" />
+      <path d="M 50 100 L 62 110 68 97 " fill="yellow" />
+
+
+        <line x1="470" y1="250" x2="470" y2="200" style="stroke:rgb(255,0,0);stroke-width:5" />
+      <line x1="470" y1="210" x2="450" y2="230" style="stroke:rgb(255,0,0);stroke-width:5" />
+       <line x1="470" y1="210" x2="490" y2="230" style="stroke:rgb(255,0,0);stroke-width:5" /> 
+      
+       <line x1="470" y1="250" x2="450" y2="270" style="stroke:rgb(255,0,0);stroke-width:5" /> 
+      <line x1="470" y1="220" x2="460" y2="210" style="stroke:rgb(255,0,0);stroke-width:5" />
+
+
+      <line x1="470" y1="220" x2="480" y2="210" style="stroke:rgb(255,0,0);stroke-width:5" /> 
+      <line x1="470" y1="250" x2="490" y2="270" style="stroke:rgb(255,0,0);stroke-width:5" /> 
+      <circle cx="470" cy="195" r="8" style="fill:rgb(255,0,0);"/>
+
+      <rect y="270" width="900" height="200" style="fill:#ffffff;" />
+
+      
+    </svg>
+    <div class="circleh"></div>
+  </div>
+</body>
 </body>
 </html>
