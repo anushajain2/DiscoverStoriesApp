@@ -1,4 +1,4 @@
 class Post < ActiveRecord::Base
-  has_many :stories
-  has_many :matters, through: :stories
+  has_many :matters
+  acts_as_votable
 end

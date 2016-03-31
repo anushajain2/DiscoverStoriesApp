@@ -1,38 +1,227 @@
-<div class="header">
-     <h1>Submit a Story</h1>
-</div>
+<html>
+<head>
+  <title>Peap</title>
+  <link href='stylesheets/bootstrap.css' rel='stylesheet'>
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="javascripts/bootstrap.min.js"></script>
+   <style>
+   #posts1 {
+   	  background-color: rgb(255, 255, 255);
+   	  height: 800px;
+   	  text-align: center;
+   	  color: rgb(0, 143, 179);
 
-<div class="main">
-	<div class="container">
-        
-	   <%= form_for(@new_post, :html => { :style => 'height: 400px;' }) do |f| %>
-	             <%= f.text_field :story, class: 'storc', :placeholder => "
-				 Share Your Thoughts 
-				 Peep into your life" %>
-	     <%= f.submit "Peap It", :class => "button.btn" %>
+   }
+
+   .material {
+      margin-left: 200px;
+      margin-right: 200px;
+      text-align: center;
+  }
+
+   .storc {
+      display: block;
+      border-color: rgb(0, 143, 179);;
+      border-width: 5px;
+      border-style: double dashed;
+      margin-top: 10px;
+      height: 500px;
+
+      width: 100%;
+   
+     
+
+    /* margin-top: 20px;
+   	 width: 700px;
+   	 height: 500px;
+   	 border-radius: 20px;
+   	 border-style: ridge;
+   	 border-color: rgb(255, 255, 0);
+   	 text-align: center;
+   	 background-color:  rgba(0, 143, 179, 0.2); */
+   }
+
+   .storctit {
+     display: block;
+     width: 100%;
+     border-color: rgb(0, 143, 179);;
+     border-width: 1px;
+     border-style: ridge;
+    
+   }
+   .storcmat {
+    display: block;
+    height: 40px;
+    
+   
+
+   }
+   .storcbut {
+   	 position: relative;
+   	 display: block;
+     width: 100%;
+     
+
+   	
+   }
+
+
+   .storc1 {
+   	 position: relative;
+   	 top: 150px;
+   	 
+   }
+
+  .menuhome1po1 {
+      display: inline-block;
+      position: absolute;
+      left: 100px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-style: ridge;
+      border-radius: 30px;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+     
+    }
+
+    .menuhome1po2 {
+      display: inline-block;
+      position: absolute;
+      left: 290px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-style: ridge;
+      border-radius: 30px;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+     
+    }
+
+    .menuhome2po1 {
+      display: inline-block;
+      position: absolute;
+      right: 300px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-radius: 30px;
+      border-style: ridge;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+    }
+    
+    .menuhome2po2 {
+      display: inline-block;
+      position: absolute;
+      right: 100px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-radius: 30px;
+      border-style: ridge;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+    }
+  
+
+    .contents {
+        text-align: center;
+    }
+    
+    
+    .content {
+    	margin-top: 20px;
+    	position: relative;
+    	background-color: rgba(0, 143, 179, 0.6);
+    	width: 700px;
+    	text-align: center;
+
+    }
+
+    .voting {
+  
+      text-align: center;
+    }
+   </style>
+</head>
+<body>
+  <div class="jumbotron" id="posts1">
+     <a href="/problems/index">
+        <div class="menuhome1po1">
+          <br> DISCOVER <br> A <br> PEAP
+        </div>
+      </a>
+      <a href="/posts">
+        <div class="menuhome1po2">
+          <br> PROFESS <br> A <br> PEAP
+        </div>
+      </a>
+      <a href="/stories/index">
+        <div class="menuhome2po1">
+          <br> ALL <br> <br> PEAPS
+        </div>
+      </a>
+      <a href="">
+        <div class="menuhome2po2">
+          <br> ABOUT <br> <br> PEAP
+        </div>
+      </a>
+    <h1 class="text-center">PEAP</h1>
+    <p class="text-center">Peace in Pain</p>
+ 
+    <div class="material">
+     
+	   <%= form_for(@new_post) do |f| %> 
+               <br><br>
+               Title : <%= f.text_field :title, class: 'storctit' %> <br>
+	            <%= f.text_area :story, :cols => 40, :rows => 15, class: 'storc', :placeholder => "Share Your Thoughts
+	            																	Peep into your life" %> <br><br>
+              Matter : <%= f.collection_select( :matter_id, Matter.all, :id, :content) %> <br><br>
+	            <%= f.submit "Peap It", :class => "button.btn", class: 'storcbut' %>
 	   <% end %>
+    </div>
 
-	   <ul class="stories">
-	     <% @all_posts.each do |p| %>
-	     <li> <%= p.story %> </li>
-	     <% end %>
-	   </ul>
 	   
-       <%= form_for(@new_matter) do |f| %>
-             <%= f.text_field :content, :placeholder => "Share Your Thoughts" %>
+    <!--   <%= form_for(@new_matter) do |f| %>
+             <%= f.text_field :content, class: 'storc1', :placeholder => "Share Your Thoughts" %>
+
        <%= f.submit "Peap It", :class => "button.btn" %>
-       <% end %>
+       <% end %> -->
 
-       <ul class="contents">
+     <!--  <div class="contents">
           <% @all_matters.each do |p| %>
-              <li> <%= p.content %> </li>
+              <div class="content"> <%= p.content %> </div>
           <% end %>
-       </ul>
+       </div> -->
 	   
+       <div class="voting">
+         <% @all_posts.each do |post| %>
+         <h4><%= link_to post.title, post %><br>
+          Submitted <%= time_ago_in_words(post.created_at) %> 
+         </h4>
+         <%= link_to like_link_path(post), method: :put do %>
+         Upvote
+         <%= post.get_upvotes.size %>
+         <% end %>
+         <% end %>
+       </div>
 	   
-	 <div class="controls">
+	<!-- <div class="controls">
        <%= collection_select( :matter, :matter_id, Matter.all, :content, :content) %>
-     </div>
-	</div>
-</div>
+     </div> -->
+  </div>
+</body>
+</html>
         

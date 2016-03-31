@@ -7,13 +7,17 @@
    <script src="javascripts/bootstrap.min.js"></script>
   <script>
      var main = function() {
-        $('.co').animate({cy: '50px'}, 
-          1900, function(){
-            $('.co').css("fill", "yellow");
-            $('.c1').fadeTo("slow", 0.4);
-            $('.c2').fadeTo("slow", 0.2);
-            $('.c3').fadeTo("slow", 0.2);
-            $('.he').css("opacity", 1);
+        $('.co').animate({cy: '0px', y:'0px'}, 
+          5000, function(){
+            $('.c1').animate({cx: '350px', cy:'100px;'}, 900);
+            $('.c2').animate({cx: '550px', cy:'100px;'}, 900);
+          /*  $('.c3').animate({cx: '260px'}, 900);
+            $('.c4').animate({cx: '640px'}, 900);  */
+
+            $('.c1').fadeTo("slow", 0.6);
+            $('.c2').fadeTo("slow", 0.6);
+
+            $('.he').css("opacity", 1);  
 
         });
      };
@@ -24,9 +28,20 @@
 
     .jumbotron {
       height: 700px;
-      background-color: rgba(128, 229, 255, 0.5);
+      
+      color: rgb(0, 143, 179);
+      background-color: rgb(255, 255, 255);
     }
 
+    .explain {
+      height: 700px;
+      position: relative;
+      background-color: rgb(0, 255, 255);
+      margin-top: -120px;
+    }
+    .pea {
+      margin-top: 150px;
+    }
     .circleh {
     margin-left: 150px;
     width: 100px;
@@ -40,47 +55,177 @@
 
     .he {
       opacity: 0.1;
+      color: #003B46;
     }
 
+
+    .svg-container2 {
+      display: inline-block;
+      
+      width: 800px;
+      height: 500px;
+     
+    }
+
+    .svg-content {
+      position: absolute;
+      top: 280px;
+      left: 0px;
+    }
+  
+    
+    .menuhome1m1 {
+      display: inline-block;
+      position: absolute;
+      left: 100px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-style: ridge;
+      border-radius: 30px;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+     
+    }
+
+    .menuhome1m2 {
+      display: inline-block;
+      position: absolute;
+      left: 290px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-style: ridge;
+      border-radius: 30px;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+     
+    }
+
+
+    
+    .menuhome2m1 {
+      display: inline-block;
+      position: absolute;
+      right: 300px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-radius: 30px;
+      border-style: ridge;
+      margin-top: -60px;
+      color: rgb(0, 143, 179);
+    }
+    
+    .menuhome2m2 {
+      display: inline-block;
+      position: absolute;
+      right: 100px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-radius: 30px;
+      border-style: ridge;
+      margin-top: -60px;
+      color: rgb(0, 143, 179);
+    }
+  
+
+
+   
   </style>
 </head>
 <body>
-  
   <div class="jumbotron">
+      <a href="/problems/index">
+        <div class="menuhome1m1">
+          <br> DISCOVER <br> A <br> PEAP
+        </div>
+      </a>
+      <a href="/posts">
+        <div class="menuhome1m2">
+          <br> PROFESS <br> A <br> PEAP
+        </div>
+      </a>
+      <a href="/stories/index">
+        <div class="menuhome2m1">
+          <br> ALL <br> <br> PEAPS
+        </div>
+      </a>
+      <a href="">
+        <div class="menuhome2m2">
+          <br> ABOUT <br> <br> PEAP
+        </div>
+      </a>
+    
     <h1 class="text-center">PEAP</h1>
     <p class="text-center">Find peace in pain</p>
-    <div class="he text-center">
-       <p>OR Help others find peace in pain</p>
-    </div>
-    <svg width="900" height="500" style="margin-left:150px; margin-top: 50px;">
-      <circle cx="470" cy="200" r="150" fill="#1f7a7a" class="c1"/>
-      <circle cx="300" cy="240" r="150" fill="#155151" class="c2"/>
-      <circle cx="620" cy="250" r="130" fill="#00cccc" class="c3" />
-      <circle cx="50" cy="250" r="50" class="co" id="co" />
-      <path d="M 50 100 L 62 110 68 97 " fill="yellow" />
+    <p class="he text-center">OR Help others find peace in pain</p>
+     
+    <div class="svg-container2">
+     <svg viewBox="10 0 900 900" preserveAspectRatio="xMinYMin meet" class="svg-content">
+    <!--  <path d='M 25,60 
+           a 20,20 1 0,0 0,40 
+           h 50 
+           a 20,20 1 0,0 0,-40 
+           a 10,10 1 0,0 -15,-10 
+           a 15,15 1 0,0 -35,10  
+           z' style="fill:yellow; margin-left:30px; margin-top:-100px;"/> 
+      <a <strong>xlink:href="http://example.com/link/"</strong>>
+         <text x="10" y="25" >An example link.</text>
+      </a> -->
+      <circle cx="380" cy="130" r="90" fill="rgba(0, 96, 128, 0.7)
+" class="c1"/>
+      <circle cx="520" cy="130" r="90" fill="rgb(0, 143, 179)" class="c2" />
+     <!-- <circle cx="600" cy="175" r="150" fill="#FF420E" class="c2" /> 
+  rgb(102, 0, 0)   rgb(0, 128, 0)   rgb(255, 255, 51)
+      <circle cx="450" cy="240" r="140" fill="#80BD9E" class="c3"/> 
+      <circle cx="750" cy="250" r="140" fill="rgb(76, 181, 245)" class="c4" />  -->
+      
+
+
+      <circle cx="100" cy="250" r="50" class="co" id="co" fill="rgb(255, 255, 0)" />
+      <text x="85" y="25" style="font-size:10px;">PEAP</text>
+    
+
+      <circle cx="450" cy="190" r="15" style="fill:yellow;"/>
+      <text x="440" y="195" style="font-size:10px;">MAN</text>
+      <text x="340" y="135" style="font-size:10px; fill:rgb(0, 143, 179)">PAIN</text>
+      <text x="540" y="135" style="font-size:10px; fill:rgba(0, 96, 128, 0.7);">PAIN</text>
+
+
+   <!--   <path d="M 50 100 L 62 110 68 97 " fill="yellow" />
       <path d="M 80 90 L 92 100 98 87 " fill="yellow" />
       <path d="M 110 100 L 62 110 68 97 " fill="yellow" />
-      <path d="M 50 100 L 62 110 68 97 " fill="yellow" />
+      <path d="M 50 100 L 62 110 68 97 " fill="yellow" /> -->
 
 
-        <line x1="470" y1="250" x2="470" y2="200" style="stroke:rgb(255,0,0);stroke-width:5" />
-      <line x1="470" y1="210" x2="450" y2="230" style="stroke:rgb(255,0,0);stroke-width:5" />
-       <line x1="470" y1="210" x2="490" y2="230" style="stroke:rgb(255,0,0);stroke-width:5" /> 
+     <!-- <line x1="450" y1="220" x2="450" y2="180" style="stroke:rgb(255,0,0);stroke-width:5" />
+
+      <line x1="450" y1="210" x2="450" y2="230" style="stroke:rgb(255,0,0);stroke-width:5" />
+      <line x1="450" y1="210" x2="490" y2="230" style="stroke:rgb(255,0,0);stroke-width:5" /> 
       
-       <line x1="470" y1="250" x2="450" y2="270" style="stroke:rgb(255,0,0);stroke-width:5" /> 
-      <line x1="470" y1="220" x2="460" y2="210" style="stroke:rgb(255,0,0);stroke-width:5" />
+      <line x1="450" y1="250" x2="420" y2="270" style="stroke:rgb(255,0,0);stroke-width:5" /> 
+      <line x1="450" y1="250" x2="460" y2="270" style="stroke:rgb(255,0,0);stroke-width:5" />  -->
 
-
-      <line x1="470" y1="220" x2="480" y2="210" style="stroke:rgb(255,0,0);stroke-width:5" /> 
-      <line x1="470" y1="250" x2="490" y2="270" style="stroke:rgb(255,0,0);stroke-width:5" /> 
-      <circle cx="470" cy="195" r="8" style="fill:rgb(255,0,0);"/>
-
-      <rect y="270" width="900" height="200" style="fill:#ffffff;" />
+     <!-- <rect y="270" width="100%" height="150" style="fill:#ffffff;" /> -->
 
       
-    </svg>
-    <div class="circleh"></div>
-  </div>
+     </svg>
+    </div>
+
+  </div>   
+
+
+
 </body>
 </body>
 </html>

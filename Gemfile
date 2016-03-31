@@ -38,6 +38,8 @@ gem 'rails_12factor', group: :production
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'acts_as_votable', '~> 0.10.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

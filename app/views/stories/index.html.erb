@@ -1,21 +1,124 @@
 <!DOCTYPE html>
 <html lang=“en”>
 <head>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <title>Peap</title>
+  <link href='stylesheets/bootstrap.css' rel='stylesheet'>
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="javascripts/bootstrap.min.js"></script>
+   <style>
+    .menuhome1s1 {
+      display: inline-block;
+      position: absolute;
+      left: 100px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-style: ridge;
+      border-radius: 30px;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+    }
+    .menuhome1s2 {
+      display: inline-block;
+      position: absolute;
+      left: 290px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-style: ridge;
+      border-radius: 30px;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+ 
+    }
+
+    .menuhome2s1 {
+      display: inline-block;
+      position: absolute;
+      right: 300px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-radius: 30px;
+      border-style: ridge;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+    }
+    
+    .menuhome2s2 {
+      display: inline-block;
+      position: absolute;
+      right: 100px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-radius: 30px;
+      border-style: ridge;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+    }
+
+    #stories1 {   
+      text-align: center;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 143, 179);
+    }
+
+    .storie {
+      border-color: rgb(0, 143, 179);;
+      border-width: 5px;
+      border-style: double dashed;
+      margin-left: 180px;
+      margin-right: 220px;
+      margin-top: 50px;
+    }
+
+    .try {
+      border-color: rgb(0, 143, 179);;
+      border-width: 5px;
+      border-style: double dashed;
+      margin-left: 180px;
+      margin-right: 220px;
+      margin-top: 50px;
+      height: 500px;
+    }
+
+   </style>
 </head> 
 
 <body>
-  <div class="menubox">
-       <a href="#">HOME</a>
-       <br>
-       <a href="/posts">Submit A Story</a>
-       <br>
-       <a href="/problems/index">All Stories</a>
-       <br>
-       <a href="#">Help</a>
-  </div>
-  <div class="storyspace">
-    <div class=box1>
+  <div class="jumbotron" id="stories1" >
+    <a href="/problems/index">
+        <div class="menuhome1s1">
+          <br> DISCOVER <br> A <br> PEAP
+        </div>
+      </a>
+      <a href="/posts">
+        <div class="menuhome1s2">
+          <br> PROFESS <br> A <br> PEAP
+        </div>
+      </a>
+      <a href="/stories/index">
+        <div class="menuhome2s1">
+          <br> ALL <br> <br> PEAPS
+        </div>
+      </a>
+      <a href="">
+        <div class="menuhome2s2">
+          <br> ABOUT <br> <br> PEAP
+        </div>
+      </a>
+      <h1 class="text-center">PEAP</h1>
+  <!--  <div class=box1>
       <p>You Inspire Me</p>
     </div>
     <div class=box2>
@@ -26,25 +129,19 @@
     </div>
     <div class=box4>
       <p>Share</p>
-    </div>
-    <div class=box5>
-         <p> 
-	      <br>
-		   <br>
-		    <br>
-			 <br>
-			  <br>
-			   <br>
-			    <br>
-			    <br>
-     <ul class="contents">
-     </ul>
-	 </p>
-    </div>
-	<div class="boxxx"></div>
-    <div class="box6"></div>
-    <div class=box7></div>
-    <div class=option1>
+    </div> -->
+
+      <div class="try"></div> 
+
+      <div class="stories">
+       <% @all_posts.each do |p| %>
+       <div class="storie"> <%= p.story %> </div>
+       <% end %>
+     </div> 
+	 
+   
+	    <div class="boxxx"></div>
+  <!--  <div class=option1>
       <img src="/assets/circle.png" class="img-responsive" id='circ' alt="star">
     </div>
     <div class=option11>
@@ -57,7 +154,40 @@
       <img src="/assets/star.png" class="img-responsive" id='star' alt="star">
     </div>
     <div class=option3>
-    </div>
+    </div>  -->
  </div>
+ <script>
+  var main = function() {
+
+ // document.getElementById('boxxx').innerHTML = vall();
+  
+  
+  $('.box1').click(function() {
+    $(this).addClass('clicked');
+    var circ = document.getElementById('circ');
+    circ.parentNode.removeChild(circ);
+
+    document.getElementById('smil').style.visibility = "visible"
+        
+  });
+
+  $('.box2').click(function() {
+    $(this).addClass('clicked2');
+    var blank = document.getElementById('blank');
+    blank.parentNode.removeChild(blank);
+
+    document.getElementById('star').style.visibility = "visible"
+        
+  });
+
+  $('.box3').click(function() {
+    $(this).addClass('clicked3');
+  });
+    
+
+};
+
+$(document).ready(main);
+ </script>
 </body>
 </html>

@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
+  get 'matters/show'
+
   get 'messages/index'
 
-  get 'matters/index'
   get 'messages/index'
   get 'posts/index'
   get 'matters/index'
   get 'stories/index'
   get 'problems/index' 
+  get '/matters/index' => 'matters#index'
+  get '/matters/:id' => 'matters#show', as: :matter
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -16,9 +19,16 @@ Rails.application.routes.draw do
   root 'messages#index'
   
   resources :matters
-  resources :posts
+  resources :posts do
+    member do
+      put "like", to: "links#upvote"
+    end
+  end
   resources :problems
   resources :messages
+
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

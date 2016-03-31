@@ -3,6 +3,11 @@ class MattersController < ApplicationController
     @new_matter = Matter.new
     @all_matters = Matter.order(created_at: :desc).all
   end
+
+  def show 
+    @matter = Matter.find(params[:id])
+    @posts = @matter.posts
+  end
   
   def create 
       @new_matter = Matter.new(post_params)

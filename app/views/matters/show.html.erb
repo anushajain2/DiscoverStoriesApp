@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang=“en”>
+<head>
+  <title>Peap</title>
+  <link href='stylesheets/bootstrap.css' rel='stylesheet'>
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="javascripts/bootstrap.min.js"></script>
+   <style>
+    .menuhome1s1 {
+      display: inline-block;
+      position: absolute;
+      left: 100px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-style: ridge;
+      border-radius: 30px;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+    }
+    .menuhome1s2 {
+      display: inline-block;
+      position: absolute;
+      left: 290px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-style: ridge;
+      border-radius: 30px;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+ 
+    }
+
+    .menuhome2s1 {
+      display: inline-block;
+      position: absolute;
+      right: 300px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-radius: 30px;
+      border-style: ridge;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+    }
+    
+    .menuhome2s2 {
+      display: inline-block;
+      position: absolute;
+      right: 100px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      border-width: 1px;
+      border-color: rgb(255, 255, 0);
+      border-radius: 30px;
+      border-style: ridge;
+      margin-top: -70px;
+      color: rgb(0, 143, 179);
+    }
+
+    #stories1 {   
+      text-align: center;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .storie {
+      margin-top: 20px;
+      position: relative;
+      background-color: rgba(0, 143, 179, 0.6);
+      width: 700px;
+      text-align: center;
+    }
+
+    .try {
+      border-color: rgb(255, 255, 0);
+      border-width: 5px;
+      border-style: dashed;
+      width: 700px;
+      height: 200px;
+      margin-left: 100px;
+      margin-top: 20px;
+   
+
+    }
+   </style>
+</head> 
+
+<body>
+  <div class="jumbotron" id="stories1" >
+    <a href="/problems/index">
+        <div class="menuhome1s1">
+          <br> DISCOVER <br> A <br> PEAP
+        </div>
+      </a>
+      <a href="/posts">
+        <div class="menuhome1s2">
+          <br> PROFESS <br> A <br> PEAP
+        </div>
+      </a>
+      <a href="/stories/index">
+        <div class="menuhome2s1">
+          <br> ALL <br> <br> PEAPS
+        </div>
+      </a>
+      <a href="">
+        <div class="menuhome2s2">
+          <br> ABOUT <br> <br> PEAP
+        </div>
+      </a>
+      <h1 class="text-center">PEAP</h1>
+  <!--  <div class=box1>
+      <p>You Inspire Me</p>
+    </div>
+    <div class=box2>
+      <p>Bravo!</p>
+    </div>
+    <div class=box3>
+      <p>Can relate!</p>
+    </div>
+    <div class=box4>
+      <p>Share</p>
+    </div> -->
+
+      <div class="try"></div>
+
+      <div class="stories">
+       <% @posts.each do |post| %>
+       <div class="storie"> <%= post.story %> </div>
+       <% end %>
+     </div> 
+	 
+   
+	    <div class="boxxx"></div>
+  <!--  <div class=option1>
+      <img src="/assets/circle.png" class="img-responsive" id='circ' alt="star">
+    </div>
+    <div class=option11>
+      <img src="/assets/smiley.png" class="img-responsive" id='smil' alt="star">
+    </div>
+    <div class=option2>
+      <img src="/assets/blank.png" class="img-responsive" id='blank' alt="star">
+    </div>
+    <div class=option21>
+      <img src="/assets/star.png" class="img-responsive" id='star' alt="star">
+    </div>
+    <div class=option3>
+    </div>  -->
+ </div>
+ <script>
+  var main = function() {
+
+ // document.getElementById('boxxx').innerHTML = vall();
+  
+  
+  $('.box1').click(function() {
+    $(this).addClass('clicked');
+    var circ = document.getElementById('circ');
+    circ.parentNode.removeChild(circ);
+
+    document.getElementById('smil').style.visibility = "visible"
+        
+  });
+
+  $('.box2').click(function() {
+    $(this).addClass('clicked2');
+    var blank = document.getElementById('blank');
+    blank.parentNode.removeChild(blank);
+
+    document.getElementById('star').style.visibility = "visible"
+        
+  });
+
+  $('.box3').click(function() {
+    $(this).addClass('clicked3');
+  });
+    
+
+};
+
+$(document).ready(main);
+ </script>
+</body>
+</html>

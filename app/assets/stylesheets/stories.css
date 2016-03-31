@@ -2,28 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.menubox {
-    position: absolute;
-    display: block;
-    height: 700px;
-    width: 100px;
-}
 
-.menubox a {
-    color: #ffffff;
-    font-size: 25px;
-    font-weight: bold;
-    padding: 24px 20px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 50px;
-    text-decoration: underline;
-}
-
-.storyspace {
-    height: 700px;
-    background-image: url(/assets/wall3.jpg);
-}
 
 .lol img {
     width: 400px;
@@ -200,3 +179,4 @@
     color: rgb(0, 255, 255);
 }
 
+  

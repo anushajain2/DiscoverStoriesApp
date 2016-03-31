@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang=“en”>
 <head>
+  <title>Peap</title>
   <link href='stylesheets/bootstrap.css' rel='stylesheet'>
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="javascripts/bootstrap.min.js"></script>
   <script>
     var main = function() {
   $('.bubble').animate({
-    top: '0px'
-  }, 900, function () {
+    top: '50px'
+  }, 1500, function () {
     $('.bubble2').fadeIn(2500);
     $('.btn-default').fadeIn(2500);
       });
@@ -14,7 +18,7 @@
   $('.btn-default').click(function() {
     document.getElementById('bub').style.display = "block"
     $('.bubble3').animate({
-      top: '150px'
+      top: '200px'
     }, 2000, function() {
       $('.bubble4').fadeIn(2500);
       $('.btn-default2').fadeIn(2500);
@@ -25,35 +29,248 @@
     var input = $("#input").val();
   });
   
-  $('.btn-default3').click(function() {
-    $('.menu').animate({
-      left: '0px'
-    }, 2000);
-  });
 };
 
   $(document).ready(main);
   </script>
+  <style>
+  @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+  #problems {
+    height: 100%;
+    margin-top: -50px;
+    background-color: rgb(255, 255, 255);
+
+  }
+  .menu {
+  position: absolute;
+  background-image: url(/assets/heart.jpg);
+  height: 100%;
+  width: 250px;
+  text-align: center;
+}
+
+.menu1 {
+  position: absolute;
+  height: 700px;
+  width: 250px;
+  text-align: center;
+  right: 0px;
+  background-image: url(/assets/heart.jpg);
+
+}
+.menu a {
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.menu h1 {
+  font-size: 10px;
+}
+
+.problemtalk {
+    background-image: url(/Users/anu//Desktop/MyWebsite/background.png);
+    background-size: 100% 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+}
+
+
+.bubble {
+    
+    height: 100px;
+    position: absolute;
+    top: 300px;
+    border-style: ridge;
+    border-radius: 30px;
+    left: 400px;
+    right: 200px;
+    text-align: center;
+    font-weight: bold;
+    border-color: #66ffff;
+    vertical-align: middle;
+}
+
+.bubble p {
+    line-height: 20px;
+}
+
+/* creates part of the curved pointy bit */
+.bubble:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -17px;
+  left: 30px;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #f3961c transparent;
+
+}
+
+.bubble2 {
+    display: none;
+  width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    border-style: ridge;
+    border-radius: 30px;
+    left: 700px;
+    text-align: center;
+    font-weight: bold;
+    border-color: #66fefe;
+}
+
+.bubble2 label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
+
+.bubble2 input {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+
+/* creates part of the curved pointy bit */
+.bubble2:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -17px;
+  right: 30px;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #f3961c transparent;
+
+}
+
+.bubble3 {
+    display: none;
+  width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 450px;
+    border-style: ridge;
+    border-radius: 30px;
+    left: 400px;
+    text-align: center;
+    border-color: #66efef;
+}
+
+.bubble3 p {
+    line-height: 40px;
+}
+
+
+
+
+/* creates part of the curved pointy bit */
+.bubble3:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -17px;
+  left: 30px;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #f3961c transparent;
+
+}
+
+.bubble4 {
+    display: none;
+  width: 250px;
+    height: 200px;
+    position: absolute;
+    top: 250px;
+    border-style: ridge;
+    border-radius: 30px;
+    left: 700px;
+    text-align: center;
+    border-color: #66ffee;
+
+}
+
+.bubble4:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -17px;
+  right: 30px;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #f3961c transparent;
+
+}
+
+.btn-default {
+    display: none;
+    position: absolute;
+    margin-left: 840px;
+    margin-top: 15px;
+}
+
+.btn-default2 {
+    display: none;
+    position: absolute;
+    margin-left: 840px;
+    margin-top: 375px;
+}
+
+.menuproblem {
+  height: 30px;
+
+  margin-top: 20px;
+
+  
+}
+
+.menuproblem h {
+  font-size: 20px;
+}
+
+.clicked {
+    color: #66ffee;
+}
+
+.clicked2 {
+    color: #001a1a;
+}
+
+.pr {
+    left: 200px;
+  top: 50 px;
+}
+</style>
 </head> 
 
 <body>
-    <div class="menu" id="men">
+<div class="jumbotron" id="problems">
+  <div class="menu" id="men">
 		  <h1>MENU</h1>
-          <a href="#">HOME</a>
-          <br>
-	      <a href="#">SUBMIT A STORY</a>
-          <br>
-          <a href="#">ALL STORIES</a>
-          <br>
-		  <a href="#">Log In</a>
-          <br>
-		  <a href="#">Help</a>
-    </div>
-	<div class="menuholder">
-		<button type="button" class="btn-default3">
-	   		<span class="glyphicon glyphicon-king"></span> Menu
-		</button>
-	</div>
+      <a href="#">
+        <div class="menuproblem"> <h> PEAP </h> </div>
+      </a>
+	    <a href="#">
+        <div class="menuproblem"> <h> PROFESS A PEAP </h> </div>
+      </a>
+      <a href="#">
+      <div class="menuproblem"> <h> ALL PEAPS </h> </div>
+      </a>
+      <a href="#">
+      <div class="menuproblem"> <h> ABOUT PEAP </h></div>
+      </a>
+  </div>
+
+  <div class="menu1"></div>
 	<div class="problemtalk">
         <div class=bubble>
             <p>Hey!
@@ -77,31 +294,30 @@
           </p>
         </div>
         <div class=bubble4 id="bubble4">
-        	<form>
-                <label for="about">It is about my </label>
-                <input type="text" id="input1">
-                <br>
-                <br>
-                <br>
-                <label for="situation">I </label>
-                <input type="text" id="input2">
-            </form>
-		<div class="boxx" id="boxx"></div>
-		<div class="controls">
-	      <%= collection_select( :matter, :matter_id, Matter.all, :content, :content) %>
-	    </div>
-		
-        </div>
-		<a href="/stories/index">
-          <button type="button" class="btn-default2" aria-label="Right Chevron">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
-            </span>
-          </button>
-	    </a>
+          	<form>
+                  <label for="about">It is about my </label>
+                  <input type="text" id="input1">
+                  <br>
+                  <br>
+                  <br>
+                  <label for="situation">I </label>
+                  <input type="text" id="input2">
+              </form>
+  		       <div class="boxx" id="boxx"></div>
+  		       <div class="controls">
+  	            <%= collection_select( :matter, :matter_id, Matter.all, :content, :content) %>
+  	         </div>
+  		
+  		       <a href="/stories/index">
+                <button type="button" class="btn-default2" aria-label="Right Chevron">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
+                </span>
+                </button>
+  	         </a>
+         </div>
 	</div>
-  <script src="javascripts/problems.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-   <script src="javascripts/bootstrap.min.js"></script>
+</div>
+<script src="javascripts/problems.js"></script>
 </body>
 </html>
 
